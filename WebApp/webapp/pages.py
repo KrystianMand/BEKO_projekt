@@ -1,8 +1,14 @@
 from flask import Blueprint, render_template, request
+import json
+
+ANIMATIONS_JSON_PATH = 'webapp/resources/animations.json'
 
 bp = Blueprint("pages", __name__)
 
 test_animations = {'First': 'First content', 'Second': 'Secondcontent'}
+
+with open(ANIMATIONS_JSON_PATH, 'r') as f:
+    test_animations = json.load(f)
 
 @bp.route("/")
 def home():
