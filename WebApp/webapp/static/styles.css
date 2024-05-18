@@ -1,0 +1,27 @@
+summary {
+    display: flex;
+    cursor: pointer;
+}
+/* 
+details > summary {
+    list-style-type: none;
+} */
+
+details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+  
+  details[open] summary span.icon {
+    transform: rotate(90deg);
+  }
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+}

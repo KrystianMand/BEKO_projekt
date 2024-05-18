@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animations</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <h2>Choose an animation</h2>
+
+    {% for animation in animations %}
+    <ul>
+        <li>
+            <details>
+                <summary>{{animation}}
+                    <span class="icon">&#8250</span>
+                </summary>
+                {{animations[animation]}}
+
+                <form action="/animations" method="post">
+                    <input type="submit" value="Run">
+                </form>
+            </details>
+        </li>
+    </ul>
+    {% endfor %}
+
+
+    {% if message %}
+    <script>alert('{{message}}')</script>
+    {% endif %}
+</body>
+
+</html>
