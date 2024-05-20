@@ -1,5 +1,6 @@
 import json
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, session, redirect, flash, url_for
+from werkzeug.security import generate_password_hash, check_password_hash
 from webapp.models import GatewaysModel, AnimationsModel
 
 ANIMATIONS_JSON_PATH = 'webapp/resources/animations.json'
@@ -10,6 +11,8 @@ test_animations = {'First': 'First content', 'Second': 'Secondcontent'}
 
 # with open(ANIMATIONS_JSON_PATH, 'r') as f:
 #     test_animations = json.load(f)
+
+users = {}
 
 @bp.route("/")
 def home():
@@ -23,6 +26,43 @@ def animations():
     elif request.method == 'POST':
         message = "Animation sent!"
         return render_template("pages/animations.html", animations=test_animations, message=message)
+
+@bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        user = users.get(username)
+        if user and check_password_hash(user['password'], password):
+            session['username'] = username
+            return redirect(url_for('pages.home'))
+        else:
+            flash('Invalid username or password')
+    
+    return render_template('pages/login.html')
+
+@bp.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        if username in users:
+            flash('Username already exists')
+        else:
+            hashed_password = generate_password_hash(password)
+            users[username] = {'password': hashed_password}
+            flash('Registration successful, please log in')
+            return redirect(url_for('pages.login'))
+    
+    return render_template('pages/register.html')
+
+@bp.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('pages.login'))
+
 
 @bp.route("/gateways", methods=['GET', 'POST'])
 def gateways():
