@@ -1,5 +1,5 @@
 from flask import Flask
-from webapp import pages
+from webapp import pages, endpoints
 from webapp.database import init_db
 
 import os
@@ -13,5 +13,6 @@ def create_app():
     init_db(app)
 
     app.register_blueprint(pages.bp)
+    app.register_blueprint(endpoints.bp)
 
     return app

@@ -13,4 +13,4 @@ class AnimationsModel(db.Model):
 
     id = Column(Integer, primary_key=True)
     name = Column(String())
-    rgb_values = Column(ARRAY(Integer, dimensions=3), nullable=False)
+    rgb_values = Column(String(), nullable=False)
