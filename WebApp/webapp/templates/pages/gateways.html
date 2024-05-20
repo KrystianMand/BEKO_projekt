@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Gateways</title>
+    </head>
+    <body>
+        <h1>Gateways</h1>
+        <p>Choose a gateway:</p>
+        <form method="post">
+            <ul>
+                {% for gateway in gateways %}
+                <li> 
+                    <input type="checkbox" name="gateway_{{ gateway.id }}" value="{{gateway.id}}">
+                    <label>{{ gateway.ip }}</label>
+                </li>
+                {% endfor %}
+            </ul>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
