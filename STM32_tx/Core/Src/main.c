@@ -139,10 +139,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  printf("hello\n\r");
-//    tx_message(buffer, sizeof(buffer));
-//    HAL_Delay(1000);
-
 	  uint8_t value;
 	  if (HAL_UART_Receive(&huart2, &value, 1, 0) == HAL_OK)
 	  		  line_append(value);

@@ -1,0 +1,14 @@
+../Radio/gpio-board.c:20:6:GpioMcuInit	56	static
+../Radio/gpio-board.c:102:6:GpioMcuSetInterrupt	56	static
+../Radio/gpio-board.c:194:6:GpioMcuRemoveInterrupt	40	static
+../Radio/gpio-board.c:203:6:GpioMcuWrite	16	static
+../Radio/gpio-board.c:217:6:GpioMcuToggle	16	static
+../Radio/gpio-board.c:232:10:GpioMcuRead	16	static
+../Radio/gpio-board.c:246:6:EXTI0_IRQHandler	8	static
+../Radio/gpio-board.c:254:6:EXTI1_IRQHandler	8	static
+../Radio/gpio-board.c:262:6:EXTI2_IRQHandler	8	static
+../Radio/gpio-board.c:270:6:EXTI3_IRQHandler	8	static
+../Radio/gpio-board.c:278:6:EXTI4_IRQHandler	8	static
+../Radio/gpio-board.c:286:6:EXTI9_5_IRQHandler	8	static
+../Radio/gpio-board.c:298:6:EXTI15_10_IRQHandler	8	static
+../Radio/gpio-board.c:311:6:HAL_GPIO_EXTI_Callback	24	static

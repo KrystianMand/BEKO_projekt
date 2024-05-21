@@ -1,0 +1,9 @@
+../Core/Src/app_template.c:124:6:app_main	56	static
+../Core/Src/app_template.c:201:6:tx_loop	16	static
+../Core/Src/app_template.c:207:6:tx_message	16	static
+../Core/Src/app_template.c:212:6:rx_loop	96	static
+../Core/Src/app_template.c:256:6:OnTxDone	8	static
+../Core/Src/app_template.c:263:6:OnRxDone	24	static
+../Core/Src/app_template.c:274:6:OnTxTimeout	8	static
+../Core/Src/app_template.c:281:6:OnRxTimeout	4	static
+../Core/Src/app_template.c:287:6:OnRxError	8	static

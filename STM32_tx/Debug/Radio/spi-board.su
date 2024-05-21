@@ -1,0 +1,7 @@
+../Radio/spi-board.c:27:25:__ffs	24	static
+../Radio/spi-board.c:41:6:SpiInit	32	static
+../Radio/spi-board.c:77:6:SpiDeInit	24	static
+../Radio/spi-board.c:87:6:SpiFormat	24	static
+../Radio/spi-board.c:115:6:SpiFrequency	24	static
+../Radio/spi-board.c:137:12:SpiGetFlag	24	static
+../Radio/spi-board.c:156:10:SpiInOut	24	static
